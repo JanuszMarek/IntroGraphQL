@@ -33,6 +33,7 @@ namespace IntroGraphQL
                 options => options.UseSqlServer(
                     Configuration["ConnectionString"]));
             services.AddTransient<BooksRepository>();
+            services.AddTransient<AuthorsRepository>();
 
             services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(
                 s.GetRequiredService));

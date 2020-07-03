@@ -18,5 +18,13 @@ namespace IntroGraphQL.Entities
         public string LastName { get; set; }
 
         public IEnumerable<Book> Books { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return FirstName + ' ' + LastName;
+            }
+        }
     }
 }
