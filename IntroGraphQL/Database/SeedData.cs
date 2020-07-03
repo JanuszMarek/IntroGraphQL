@@ -9,7 +9,7 @@ namespace IntroGraphQL.Database
     {
         public static void Seed(this ApplicationDbContext dbContext)
         {
-            if(!dbContext.Authors.Any())
+            if (!dbContext.Authors.Any())
             {
                 var authors = new List<Author>();
                 authors.Add(new Author()
@@ -30,7 +30,7 @@ namespace IntroGraphQL.Database
                 dbContext.Authors.AddRange(authors);
             }
 
-            if (!dbContext.Authors.Any())
+            if (!dbContext.Books.Any())
             {
                 var books = new List<Book>();
                 books.Add(new Book()
@@ -79,14 +79,14 @@ namespace IntroGraphQL.Database
                 {
                     Title = "Blood of Elves",
                     Description = "For over a century, humans, dwarves, gnomes, and elves have lived together in relative peace. But times have changed, the uneasy peace is over, and now the races are fighting once again. The only good elf, it seems, is a dead elf. Geralt of Rivia, the cunning assassin known as The Witcher, has been waiting for the birth of a prophesied child.This child has the power to change the world - for good, or for evil.",
-                    ReleaseDate = new DateTime(1994),
+                    ReleaseDate = new DateTime(1994, 1, 1),
                     AuthorId = 3
                 });
                 books.Add(new Book()
                 {
                     Title = "Time of Contempt",
                     Description = "The story in Time of Contempt begins where the previous book left off, essentially with Ciri and Yennefer having just left the Temple in Ellander, on their way to Gors Velen, and ultimately Thanedd Island. It is Yennefer's intention that Ciri be enrolled at the Aretuza school of magic and that she continue her instruction in the use and mastery of magic.",
-                    ReleaseDate = new DateTime(1995),
+                    ReleaseDate = new DateTime(1995, 1, 1),
                     AuthorId = 3
                 });
                 dbContext.Books.AddRange(books);
