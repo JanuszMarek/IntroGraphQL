@@ -1,4 +1,8 @@
+using GraphQL;
+using GraphQL.Server;
+using GraphQL.Server.Ui.Playground;
 using IntroGraphQL.Database;
+using IntroGraphQL.GraphQL;
 using IntroGraphQL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -25,11 +29,16 @@ namespace IntroGraphQL
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(
                     Configuration["ConnectionString"]));
             services.AddTransient<BooksRepository>();
+
+            services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(
+                s.GetRequiredService));
+            services.AddScoped<BooksSchema>();
+
+            services.AddGraphQL(o => { o.ExposeExceptions = true; }).AddGraphTypes(ServiceLifetime.Scoped);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,15 +50,8 @@ namespace IntroGraphQL
             }
 
             app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseGraphQL<BooksSchema>();
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
 
             dbContext.Seed();
         }
