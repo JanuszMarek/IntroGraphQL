@@ -256,21 +256,3 @@ paket-files/
 
 # CodeRush
 .cr/
-
-# Python Tools for Visual Studio (PTVS)
-__pycache__/
-*.pyc
-/frontend/PipFrontend/ClientApp/scripts/swagger/temp
-/frontend/PipFrontend/ClientApp/scripts/swagger/swagger-codegen-cli-2.2.3.jar
-/frontend/PipFrontend/ClientApp/scripts/swagger/openapi-generator-cli-3.3.1.jar
-/frontend/PipFrontend/ClientApp/scripts/swagger/openapi-generator-cli-4.3.0.jar
-
-# e2e Test Results
-/frontend/PipFrontend/ClientApp/PIPFrontendE2ETestResults
-
-#Logs
-/midtier/PipApi/logs
-/midtier/PipApi/appsettings.Testing.json
-/midtier/PipApi/appsettings.PLKTW4563N.json
-/midtier/PipApi/appsettings.PLKTW4849N.json
-/PIP.RecurrentProcesses/Properties/PublishProfiles

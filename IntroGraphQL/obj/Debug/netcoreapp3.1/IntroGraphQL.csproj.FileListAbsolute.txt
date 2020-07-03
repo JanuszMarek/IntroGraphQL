@@ -2,7 +2,6 @@ C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreap
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\IntroGraphQL.exe
-C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.csprojAssemblyReference.cache
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.AssemblyInfoInputs.cache
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.AssemblyInfo.cs
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.RazorTargetAssemblyInfo.cache
@@ -47,8 +46,13 @@ C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreap
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\IntroGraphQL.dll
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\IntroGraphQL.pdb
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.csproj.CoreCompileInputs.cache
-C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.dll
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.pdb
 C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.genruntimeconfig.cache
+C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\obj\Debug\netcoreapp3.1\IntroGraphQL.csprojAssemblyReference.cache
+C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\GraphQL.dll
+C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\GraphQL-Parser.dll
+C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\System.Reactive.Core.dll
+C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\System.Reactive.Interfaces.dll
+C:\Users\janusz.marek\source\repos\IntroGraphQL\IntroGraphQL\bin\Debug\netcoreapp3.1\System.Reactive.Linq.dll
