@@ -14,19 +14,16 @@ namespace IntroGraphQL.Database
                 var authors = new List<Author>();
                 authors.Add(new Author()
                 {
-                    Id = 1,
                     FirstName = "James",
                     LastName = "Patterson"
                 });
                 authors.Add(new Author()
                 {
-                    Id = 2,
                     FirstName = "Stephen",
                     LastName = "King"
                 });
                 authors.Add(new Author()
                 {
-                    Id = 3,
                     FirstName = "Andrzej",
                     LastName = "Sapkowski"
                 });
