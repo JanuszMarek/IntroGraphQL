@@ -25,7 +25,8 @@ bld/
 # Visual Studio 2015 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
-#wwwroot/
+wwwroot/
+
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -259,3 +260,17 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/frontend/PipFrontend/ClientApp/scripts/swagger/temp
+/frontend/PipFrontend/ClientApp/scripts/swagger/swagger-codegen-cli-2.2.3.jar
+/frontend/PipFrontend/ClientApp/scripts/swagger/openapi-generator-cli-3.3.1.jar
+/frontend/PipFrontend/ClientApp/scripts/swagger/openapi-generator-cli-4.3.0.jar
+
+# e2e Test Results
+/frontend/PipFrontend/ClientApp/PIPFrontendE2ETestResults
+
+#Logs
+/midtier/PipApi/logs
+/midtier/PipApi/appsettings.Testing.json
+/midtier/PipApi/appsettings.PLKTW4563N.json
+/midtier/PipApi/appsettings.PLKTW4849N.json
+/PIP.RecurrentProcesses/Properties/PublishProfiles
