@@ -1,6 +1,8 @@
 ﻿using IntroGraphQL.Database;
 using IntroGraphQL.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace IntroGraphQL.Repositories
 {
@@ -13,9 +15,9 @@ namespace IntroGraphQL.Repositories
             this.dbContext = dbContext;
         }
 
-        public IEnumerable<Book> GetAll()
+        public async Task<IEnumerable<Book>> GetAllAsync()
         {
-            return dbContext.Books;
+            return await dbContext.Books.ToListAsync();
         }
     }
 }
