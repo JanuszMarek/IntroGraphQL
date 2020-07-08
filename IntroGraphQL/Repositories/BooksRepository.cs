@@ -19,5 +19,10 @@ namespace IntroGraphQL.Repositories
         {
             return await dbContext.Books.ToListAsync();
         }
+
+        public async Task<Book> GetById(long id)
+        {
+            return await dbContext.Books.FirstOrDefaultAsync(x => x.Id == id);
+        }
     }
 }

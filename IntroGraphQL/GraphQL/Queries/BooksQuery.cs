@@ -15,6 +15,15 @@ namespace IntroGraphQL.GraphQL.Queries
             Field<ListGraphType<BookType>>(
                 "books",
                 resolve: context => booksRepository.GetAllAsync());
+
+            Field<BookType>(
+                "book",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IdGraphType>> { Name = "id" }),
+                resolve: context =>
+                {
+                    var id = context.GetArgument<long>("id");
+                    return booksRepository.GetById(id);
+                });
         }
     }
 }
