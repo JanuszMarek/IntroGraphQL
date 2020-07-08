@@ -5,15 +5,11 @@ using IntroGraphQL.Database;
 using IntroGraphQL.GraphQL;
 using IntroGraphQL.Repositories;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace IntroGraphQL
 {
@@ -37,9 +33,12 @@ namespace IntroGraphQL
 
             services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(
                 s.GetRequiredService));
-            services.AddScoped<BooksSchema>();
+            services.AddScoped<LibrarySchema>();
 
-            services.AddGraphQL(o => { o.ExposeExceptions = true; }).AddGraphTypes(ServiceLifetime.Scoped);
+
+            services.AddGraphQL(o => { o.ExposeExceptions = true; })
+                .AddGraphTypes(ServiceLifetime.Scoped)
+                .AddDataLoader();
 
             // If using IIS:
             services.Configure<IISServerOptions>(options =>
@@ -57,7 +56,7 @@ namespace IntroGraphQL
             }
 
             app.UseHttpsRedirection();
-            app.UseGraphQL<BooksSchema>();
+            app.UseGraphQL<LibrarySchema>();
             app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
 
             dbContext.Seed();

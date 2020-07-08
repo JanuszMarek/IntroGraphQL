@@ -15,9 +15,21 @@ namespace IntroGraphQL.Repositories
         {
             this.dbContext = dbContext;
         }
-        public Author GetAuthorAsync(long id)
+
+        public async Task<IEnumerable<Author>> GetAuthorsAsync()
+        {
+            return await dbContext.Authors.ToListAsync();
+        }
+
+        public Author GetAuthorById(long id)
         {
             return dbContext.Authors.FirstOrDefault(x => x.Id == id);
         }
+
+        public async Task<Author> GetAuthorByIdAsync(long id)
+        {
+            return await dbContext.Authors.FirstOrDefaultAsync(x => x.Id == id);
+        }
+
     }
 }

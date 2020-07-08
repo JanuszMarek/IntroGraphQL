@@ -18,7 +18,7 @@ namespace IntroGraphQL.GraphQL.Types
             Field(t => t.ReleaseDate);
             Field<AuthorType>(
                 "author",
-                resolve: context => authorsRepository.GetAuthorAsync(context.Source.AuthorId)
+                resolve: context => authorsRepository.GetAuthorById(context.Source.AuthorId)
                 );
         }
     }
