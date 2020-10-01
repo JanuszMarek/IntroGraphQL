@@ -1,13 +1,15 @@
 ﻿using GraphQL;
 using GraphQL.Types;
+using GraphQL.Utilities;
+using System;
 
 namespace IntroGraphQL.GraphQL
 {
     public class LibrarySchema : Schema
     {
-        public LibrarySchema(IDependencyResolver resolver): base(resolver)
+        public LibrarySchema(IServiceProvider service): base(service)
         {
-            Query = resolver.Resolve<LibraryQuery>();
+            Query = service.GetRequiredService<LibraryQuery>();
         }
     }
 }

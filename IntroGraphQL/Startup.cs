@@ -1,6 +1,7 @@
 using GraphQL;
 using GraphQL.Server;
 using GraphQL.Server.Ui.Playground;
+using GraphQL.NewtonsoftJson;
 using IntroGraphQL.Database;
 using IntroGraphQL.GraphQL;
 using IntroGraphQL.Repositories;
@@ -10,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Web.Mvc;
 
 namespace IntroGraphQL
 {
@@ -27,17 +30,19 @@ namespace IntroGraphQL
         {
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(
-                    Configuration["ConnectionString"]));
+                    Configuration["ConnectionString"]), ServiceLifetime.Transient);
+            services.AddTransient<Func<ApplicationDbContext>>(options => () => options.GetService<ApplicationDbContext>());
             services.AddTransient<BooksRepository>();
             services.AddTransient<AuthorsRepository>();
 
-            services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(
-                s.GetRequiredService));
+            //services.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(
+            //    s.GetRequiredService));
             services.AddScoped<LibrarySchema>();
 
 
-            services.AddGraphQL(o => { o.ExposeExceptions = true; })
+            services.AddGraphQL(o => { o.EnableMetrics = true; })
                 .AddGraphTypes(ServiceLifetime.Scoped)
+                .AddSystemTextJson(deserializerSettings => { }, serializerSettings => { })
                 .AddDataLoader();
 
             // If using IIS:
