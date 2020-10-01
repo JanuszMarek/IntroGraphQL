@@ -1,4 +1,5 @@
 ﻿using GraphQL.Types;
+using IntroGraphQL.Database;
 using IntroGraphQL.Entities;
 using IntroGraphQL.Repositories;
 using System;
@@ -10,15 +11,19 @@ namespace IntroGraphQL.GraphQL.Types
 {
     public class BookType : ObjectGraphType<Book>
     {
-        public BookType(AuthorsRepository authorsRepository)
+        public BookType(Func<ApplicationDbContext> dbContext)
         {
             Field(t => t.Id);
             Field(t => t.Title);
             Field(t => t.Description);
             Field(t => t.ReleaseDate);
-            Field<AuthorType>(
+            FieldAsync<AuthorType>(
                 "author",
-                resolve: context => authorsRepository.GetAuthorById(context.Source.AuthorId)
+                resolve: async context => {
+                    using var db = dbContext();
+                    var authorsRepository = new AuthorsRepository(db);
+                    return await authorsRepository.GetAuthorByIdAsync(context.Source.AuthorId);
+                }
                 );
         }
     }

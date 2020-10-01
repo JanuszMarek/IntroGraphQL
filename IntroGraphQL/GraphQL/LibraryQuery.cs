@@ -9,9 +9,12 @@ namespace IntroGraphQL.GraphQL
     {
         public LibraryQuery(BooksRepository booksRepository, AuthorsRepository authorsRepository)
         {
-            Field<ListGraphType<BookType>>(
+            FieldAsync<ListGraphType<BookType>>(
                 "books",
-                resolve: context => booksRepository.GetAllAsync());
+                resolve: async context =>
+                {
+                    return await booksRepository.GetAllAsync();
+                });
 
             Field<BookType>(
                 "book",

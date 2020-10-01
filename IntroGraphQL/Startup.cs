@@ -41,7 +41,7 @@ namespace IntroGraphQL
 
 
             services.AddGraphQL(o => { o.EnableMetrics = true; })
-                .AddGraphTypes(ServiceLifetime.Scoped)
+                .AddGraphTypes(ServiceLifetime.Transient)
                 .AddSystemTextJson(deserializerSettings => { }, serializerSettings => { })
                 .AddDataLoader();
 
